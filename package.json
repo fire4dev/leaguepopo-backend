@@ -1,0 +1,32 @@
+{
+  "name": "leaguepopo-api",
+  "version": "0.0.1",
+  "description": "LeaguePoPo API",
+  "main": "src/index.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "kayn": "0.10.2",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fire4dev/leaguepopo.git"
+  },
+  "author": "Fire4Dev <fire4dev@gmail.com> (https://github.com/fire4dev/leaguepopo)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fire4dev/leaguepopo/issues"
+  },
+  "homepage": "https://github.com/fire4dev/leaguepopo#readme"
+}

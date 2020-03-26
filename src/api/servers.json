@@ -1,0 +1,74 @@
+{
+  "Servers": [
+    {
+      "id": 1,
+      "serverId": "BR",
+      "region": "BRAZIL"
+    },
+    {
+      "id": 2,
+      "serverId": "EUNE",
+      "region": "EUROPE NORDIC & EAST"
+    },
+    {
+      "id": 3,
+      "serverId": "EUW",
+      "region": "EUROPE WEST"
+    },
+    {
+      "id": 4,
+      "serverId": "LAN",
+      "region": "LATIN AMERICA NORTH"
+    },
+    {
+      "id": 5,
+      "serverId": "LAS",
+      "region": "LATIN AMERICA SOUTH"
+    },
+    {
+      "id": 6,
+      "serverId": "NA",
+      "region": "NORTH AMERICA"
+    },
+    {
+      "id": 7,
+      "serverId": "OCE",
+      "region": "OCEANIA"
+    },
+    {
+      "id": 8,
+      "serverId": "RU",
+      "region": "RUSSIA"
+    },
+    {
+      "id": 9,
+      "serverId": "TR",
+      "region": "TURKEY"
+    },
+    {
+      "id": 10,
+      "serverId": "JP",
+      "region": "JAPAN"
+    },
+    {
+      "id": 11,
+      "serverId": "SEA",
+      "region": "GARENA SOUTH EAST ASIA"
+    },
+    {
+      "id": 12,
+      "serverId": "KR",
+      "region": "REPUBLIC OF KOREA"
+    },
+    {
+      "id": 13,
+      "serverId": "CN",
+      "region": "PEOPLE'S REPUBLIC OF CHINA"
+    },
+    {
+      "id": 14,
+      "serverId": "PBE",
+      "region": "PUBLIC BETA ENVIRONMENT"
+    }
+  ]
+}
