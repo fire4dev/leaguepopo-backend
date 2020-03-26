@@ -8,14 +8,17 @@ getSummonerInfo = (req, res) => {
     getSummonerLeague(server, data.id).then(league => {
       getSummonerMatch(server, data.accountId).then(match => {
         getAllSummonerMatchData(match.matches).then(matchInfo => {
-          res.json({
+          let promise = new Promise(resolve => {
+            resolve(matchInfo)
+          })
+          res.json([{
             summonerId: data.id,
             summonerName: data.name,
             summonerLevel: data.summonerLevel,
             ImgURL: urlProfileIcon+data.profileIconId+'.png',
-            league,
-            matchInfo
-          });
+            league: league[0],
+            matchInfo: promise
+          }]);
         })
       }).catch(err => console.log(err))
     }).catch(err => console.log(err))
@@ -25,8 +28,11 @@ getSummonerInfo = (req, res) => {
 
 getAllSummonerMatchData = async (m) => {
   var array = []
-  m.forEach(async matchIds => {
+  m.forEach(matchIds => {
     array.push(returnMatchParams(matchIds.gameId))
+  })
+  let promise = new Promise(resolve => {
+    resolve(array)
   })
   return array
 } 
