@@ -13,6 +13,6 @@ app.use(express.static('public'))
 
 app.get('/api/champion/freeweek', getChampionFreeWeek);
 app.get('/api/dashboard/:server/:summonerName', getSummonerInfo);
-app.get('/api/dashboard/match-history', getAllSummonerMatchData);
+// app.get('/api/dashboard/match-history', getAllSummonerMatchData);
 
 app.listen(port, () => console.log(`Server running at 'http://localhost:${port}/'`));

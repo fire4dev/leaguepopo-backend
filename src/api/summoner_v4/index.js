@@ -7,27 +7,28 @@ getSummonerInfo = (req, res) => {
   getSummonerId(req).then(data => {
     getSummonerLeague(server, data.id).then(league => {
       getSummonerMatch(server, data.accountId).then(match => {
-        res.json({
-          summonerId: data.id,
-          summonerName: data.name,
-          summonerLevel: data.summonerLevel,
-          ImgURL: urlProfileIcon+data.profileIconId+'.png',
-          league,
-        });
-        getAllSummonerMatchData(req.params)
+        getAllSummonerMatchData(match.matches).then(matchInfo => {
+          res.json({
+            summonerId: data.id,
+            summonerName: data.name,
+            summonerLevel: data.summonerLevel,
+            ImgURL: urlProfileIcon+data.profileIconId+'.png',
+            league,
+            matchInfo
+          });
+        })
       }).catch(err => console.log(err))
     }).catch(err => console.log(err))
   }).catch(err => console.log(err))
 }
 
 
-getAllSummonerMatchData = (req, res, m) => {
-  // var array = []
-  // m.forEach(async matchIds => {
-  //   array.push(returnMatchParams(matchIds.gameId))
-  // })
-  // console.log(array)
-  console.log(req)
+getAllSummonerMatchData = async (m) => {
+  var array = []
+  m.forEach(async matchIds => {
+    array.push(returnMatchParams(matchIds.gameId))
+  })
+  return array
 } 
 
 returnMatchParams = async (id) => {
@@ -56,5 +57,4 @@ getSummonerId = async (req) => {
 
 module.exports = {
   getSummonerInfo,
-  getAllSummonerMatchData
 }

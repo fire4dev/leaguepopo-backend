@@ -4,10 +4,8 @@
   "description": "LeaguePoPo API",
   "main": "src/index.js",
   "scripts": {
-    "client": "cd client && npm start",
     "server": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "start": "node src/index.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
