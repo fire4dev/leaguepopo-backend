@@ -1,7 +1,7 @@
 const kayn = require('./../setting');
 const fetch = require('node-fetch')
 
-getSummonerInfo = (req, res) => {
+getSummonerInfo = (req, res, next) => {
   const {server} = req.params;
   const urlProfileIcon = 'http://ddragon.leagueoflegends.com/cdn/10.6.1/img/profileicon/';
   getSummonerId(req).then(data => {
@@ -20,9 +20,9 @@ getSummonerInfo = (req, res) => {
             matchInfo: promise
           }]);
         })
-      }).catch(err => console.log(err))
-    }).catch(err => console.log(err))
-  }).catch(err => console.log(err))
+      }).catch(err => res.send(err))
+    }).catch(err => res.send(err))
+  }).catch(err => res.send(err))
 }
 
 
